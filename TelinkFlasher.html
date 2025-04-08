@@ -787,10 +787,6 @@
             sendCustomSetting(segment_bytes_to_send);
         }
     </script>
-    <big><big>Telink Flasher for Mi Thermostat</big></big><br>
-    Copyright: Aaron Christophel / Atc1441 <a href="https://atcnetz.de">https://ATCnetz.de</a><br>
-    <a href="https://youtu.be/NXKzFG61lNs">Video Manual</a> <a
-        href="https://github.com/atc1441/ATC_MiThermometer">Custom firmware repo</a><br><br>
     <button type="button" onclick="connect();">Connect</button>
     <button type="button" onclick="reConnect();">Reconnect</button><br>
     <label for="hideUnknown">Hide unknown</label>
@@ -803,59 +799,10 @@
     <button type="button" onclick="clearLog();">Clear Log</button><br><br>
     Please select a .bin file you want to flash to a Telink BLE device.<br><br>
     Select Firmware: <input type="file" accept=".bin" id="file" onclick="resetFileSelector();" /><br>
-    Send settings to custom firmware:<br>
-    <input type="text" id="cmdTXT" value="">
-    <button type="button"
-        onclick="sendCustomSetting(document.getElementById(&quot;cmdTXT&quot;).value,settingsCharacteristics);">Send</button>
-    <br><br>
-    Settings:
-    <button type="button" onclick="sendCustomSetting(&quot;DF&quot;);">Save current settings in flash</button>
-    <button type="button" onclick="sendCustomSetting(&quot;DE&quot;);">Reset settings to default</button>
-    <br><br>
-    Smiley:
-    <button type="button" onclick="sendCustomSetting(&quot;A0&quot;);">Off</button>
-    <button type="button" onclick="sendCustomSetting(&quot;A1&quot;);">Happy</button>
-    <button type="button" onclick="sendCustomSetting(&quot;A2&quot;);">Sad</button>
-    <button type="button" onclick="sendCustomSetting(&quot;AB&quot;);">Blinking</button>
-    <button type="button" onclick="sendCustomSetting(&quot;A3&quot;);">Comfort Indicator</button>
-    <br><br>
-    Advertising Type:
-    <button type="button" onclick="sendCustomSetting(&quot;AE&quot;);">Custom</button>
-    <button type="button" onclick="sendCustomSetting(&quot;AF&quot;);">Mi Like</button>
-    <br><br>
-    Sensor display:
-    <button type="button" onclick="sendCustomSetting(&quot;CC&quot;);">In °C</button>
-    <button type="button" onclick="sendCustomSetting(&quot;FF&quot;);">In °F</button>
-    <br><br>
-    Sensor advertising:
-    <button type="button" onclick="sendCustomSetting(&quot;0C&quot;);">In °C</button>
-    <button type="button" onclick="sendCustomSetting(&quot;0F&quot;);">In °F</button>
-    <br><br>
-    Show battery in LCD:
-    <button type="button" onclick="sendCustomSetting(&quot;B1&quot;);">Enabled</button>
-    <button type="button" onclick="sendCustomSetting(&quot;B0&quot;);">Disabled</button>
-    <br><br>
-    Advertising interval:
-    <button type="button" onclick="sendCustomSetting(&quot;FE01&quot;);">10 Seconds</button>
-    <button type="button" onclick="sendCustomSetting(&quot;FE06&quot;);">1 Minute</button>
-    <button type="button" onclick="sendCustomSetting(&quot;FE1E&quot;);">5 Minutes</button>
-    <button type="button" onclick="sendCustomSetting(&quot;FE3C&quot;);">10 Minutes</button>
-    <br><br>
-    Sensor offset:
-    <button type="button" onclick="sendCustomSetting(&quot;FA00&quot;);">Temp 0°C offset</button>
-    <button type="button" onclick="sendCustomSetting(&quot;FB00&quot;);">Humi 0% offset</button><br>
-    To set a precise offset use the text input field with FA+offset for Temp and FB+offset for Humiditiy convert an int8
-    to hex.
-    <br><br>
-    Sensor instant Advertising:
-    <button type="button" onclick="sendCustomSetting(&quot;FC05&quot;);">Temp 0,5°C instant alarm</button>
-    <button type="button" onclick="sendCustomSetting(&quot;FD05&quot;);">Humi 5% instant alarm</button><br>
-    To set other values use the text input with FC+temp alarm or FD+humi alarm with uint8_t values.
-    This can be used to get instant advertising if the sensor data changes to fast. Temp divided by 10
-    <br>
-    To set a precise offset use the text input field with FA+offset for Temp and FB+offset for Humiditiy convert an int8
-    to hex.
-    <br>
+    <div id="percent">Status: waiting for you to connect a device</div>
+    <hr>
+    <div id="tempHumiData">Temp/Humi: waiting for data, this will not change on devices with custom firmware, only on
+        stock firmware</div>
     <hr>
     <div id="mapper"><button id="mapper_toggle_button" type="button" onclick="mapper_toggle();">Show LCD Segment
             Mapper</button><br>
