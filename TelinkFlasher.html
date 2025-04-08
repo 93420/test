@@ -706,17 +706,6 @@
             }
             return hex;
         }
-        function mapper_toggle() {
-            var mapper_content_div = document.getElementById("mapper_content");
-            var mapper_button = document.getElementById("mapper_toggle_button");
-            if (mapper_content_div.style.display === "none") {
-                mapper_content_div.style.display = "block";
-                mapper_button.innerText = "Hide LCD Segment Mapper";
-            } else {
-                mapper_content_div.style.display = "none";
-                mapper_button.innerText = "Show LCD Segment Mapper";
-            }
-        }
 
         function mapper_send() {
             var byte0 = 0;
@@ -818,83 +807,9 @@
     to hex.
     <br>
     <hr>
-    <div id="mapper"><button id="mapper_toggle_button" type="button" onclick="mapper_toggle();">Show LCD Segment
-            Mapper</button><br>
-
-        <div style="display: none" id="mapper_content">
-
-            <div>
-                Byte0:
-                <input type="checkbox" id="check00">0</input>
-                <input type="checkbox" id="check01">1</input>
-                <input type="checkbox" id="check02">2</input>
-                <input type="checkbox" id="check03">3</input>
-                <input type="checkbox" id="check04">4</input>
-                <input type="checkbox" id="check05">5</input>
-                <input type="checkbox" id="check06">6</input>
-                <input type="checkbox" id="check07">7</input>
-            </div>
-            <div>
-                Byte1:
-                <input type="checkbox" id="check10">0</input>
-                <input type="checkbox" id="check11">1</input>
-                <input type="checkbox" id="check12">2</input>
-                <input type="checkbox" id="check13">3</input>
-                <input type="checkbox" id="check14">4</input>
-                <input type="checkbox" id="check15">5</input>
-                <input type="checkbox" id="check16">6</input>
-                <input type="checkbox" id="check17">7</input>
-            </div>
-            <div>
-                Byte2:
-                <input type="checkbox" id="check20">0</input>
-                <input type="checkbox" id="check21">1</input>
-                <input type="checkbox" id="check22">2</input>
-                <input type="checkbox" id="check23">3</input>
-                <input type="checkbox" id="check24">4</input>
-                <input type="checkbox" id="check25">5</input>
-                <input type="checkbox" id="check26">6</input>
-                <input type="checkbox" id="check27">7</input>
-            </div>
-            <div>
-                Byte3:
-                <input type="checkbox" id="check30">0</input>
-                <input type="checkbox" id="check31">1</input>
-                <input type="checkbox" id="check32">2</input>
-                <input type="checkbox" id="check33">3</input>
-                <input type="checkbox" id="check34">4</input>
-                <input type="checkbox" id="check35">5</input>
-                <input type="checkbox" id="check36">6</input>
-                <input type="checkbox" id="check37">7</input>
-            </div>
-            <div>
-                Byte4:
-                <input type="checkbox" id="check40">0</input>
-                <input type="checkbox" id="check41">1</input>
-                <input type="checkbox" id="check42">2</input>
-                <input type="checkbox" id="check43">3</input>
-                <input type="checkbox" id="check44">4</input>
-                <input type="checkbox" id="check45">5</input>
-                <input type="checkbox" id="check46">6</input>
-                <input type="checkbox" id="check47">7</input>
-            </div>
-            <div>
-                Byte5:
-                <input type="checkbox" id="check50">0</input>
-                <input type="checkbox" id="check51">1</input>
-                <input type="checkbox" id="check52">2</input>
-                <input type="checkbox" id="check53">3</input>
-                <input type="checkbox" id="check54">4</input>
-                <input type="checkbox" id="check55">5</input>
-                <input type="checkbox" id="check56">6</input>
-                <input type="checkbox" id="check57">7</input>
-            </div>
-            <button type="button" onclick="mapper_send()">Send bytes</button><br>
-        </div>
-    </div>
     <div id="log">Log:<br></div>
     <div id="result"></div>
-    toto1
+    toto2amppertoggle
 </body>
 
 </html>
