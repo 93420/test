@@ -34,9 +34,7 @@
         var keypair, is_activated, own_public_key, device_public_key, shared_key, derived_key, mi_write_did;
         var device_new_id = "00626c742e332e31323976" + makeRandomID(6) + "415443";
 
-        function resetFileSelector() {
-            document.getElementById("file").value = '';
-        };
+
 
         function resetVariables() {
             busy = false;
@@ -48,7 +46,7 @@
             document.getElementById("known_id").value = '';
             document.getElementById("mi_token").value = '';
             document.getElementById("mi_bind_key").value = '';
-            resetFileSelector();
+
         }
 
         function handleError(error) {
@@ -798,7 +796,6 @@
     <button type="button" onclick="startDFU();">Start Flashing</button>
     <button type="button" onclick="clearLog();">Clear Log</button><br><br>
 
-    <hr>
     <div id="tempHumiData">Temp/Humi: waiting for data, this will not change on devices with custom firmware, only on
         stock firmware</div>
     <hr>
